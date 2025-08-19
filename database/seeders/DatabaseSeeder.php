@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,24 @@ class DatabaseSeeder extends Seeder
             'password' => '12345678',
             'level' => '0',
             'email' => 'karyawan@example.com',
+        ]);
+
+        DB::table('kategori')->insert([
+            [
+                'nama_kategori' => 'Makanan',
+                'created_at'    => now(),
+                'updated_at'    => now(),
+            ],
+            [
+                'nama_kategori' => 'Minuman',
+                'created_at'    => now(),
+                'updated_at'    => now(),
+            ],
+            [
+                'nama_kategori' => 'Snack',
+                'created_at'    => now(),
+                'updated_at'    => now(),
+            ],
         ]);
     }
 }
