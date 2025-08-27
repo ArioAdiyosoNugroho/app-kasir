@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('id_supplier');
             $table->integer('total_item');
             $table->integer('total_harga');
-            $table->tinyInteger('diskon')->default(0);
+            $table->tinyInteger('diskon')->default(0)->nullable() ;
             $table->integer('bayar')->default(0);
             $table->timestamps();
         });

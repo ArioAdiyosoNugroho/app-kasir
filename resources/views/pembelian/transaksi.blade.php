@@ -52,13 +52,13 @@
             </div>
 
             <div class="mb-3">
-                <label for="diskon" class="form-label">Diskon (%):</label>
-                <input type="number" name="diskon" id="diskon" class="form-control" placeholder="Diskon" min="0" max="100" onchange="updateTotal()">
+                {{-- <label for="diskon" class="form-label">Diskon (%):</label> --}}
+                <input type="hidden" name="diskon" id="diskon" class="form-control" placeholder="Diskon" min="0" max="100" onchange="updateTotal()">
             </div>
 
             <div class="mb-3">
                 <label for="total_item" class="form-label">Total Item:</label>
-                <input type="text" id="total_item" class="form-control" value="0" readonly>
+                <input type="text" name="total_item" id="total_item" class="form-control" value="0" readonly>
             </div>
 
             <div class="mb-3">

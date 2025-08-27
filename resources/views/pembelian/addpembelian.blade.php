@@ -17,7 +17,7 @@
             <small class="text-muted float-end">Tambahkan pembelian</small>
           </div>
           <div class="card-body">
-            <form action="{{ url('pembelian') }}" method="POST">
+            <form action="{{ route('pembelian.store') }}" method="POST">
               @csrf
               <div class="row mb-3">
                 <label class="col-sm-2 col-form-label" for="basic-default-company">Suplier</label>
@@ -57,14 +57,14 @@
               </div>
 
               <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-default-company">Nominal</label>
+                <label class="col-sm-2 col-form-label" for="basic-default-company">bayar</label>
                 <div class="col-sm-10">
                   <input
                     type="number"
                     class="form-control"
-                    id="nominal"
-                    name="nominal"
-                    placeholder="Nominal..."
+                    id="bayar"
+                    name="bayar"
+                    placeholder="bayar..."
                   />
                 </div>
               </div>

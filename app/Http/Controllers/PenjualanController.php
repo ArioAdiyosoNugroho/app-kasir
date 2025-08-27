@@ -67,7 +67,7 @@ class PenjualanController extends Controller
             foreach ($request->produk as $produk) {
                 $item = Produk::where('kode_produk', $produk['kode_produk'])->first();
                 $jumlah = $produk['jumlah'];
-                $subtotal = $item->harga_jual * $jumlah; 
+                $subtotal = $item->harga_jual * $jumlah;
                 $totalHarga += $subtotal;
                 $totalItem += $jumlah;
 
@@ -81,14 +81,14 @@ class PenjualanController extends Controller
                 $produkDetails[] = [
                     'id_produk' => $item->id_produk,
                     'kode_produk' => $item->kode_produk,
-                    'harga_jual' => $item->harga_jual, 
+                    'harga_jual' => $item->harga_jual,
                     'jumlah' => $jumlah,
                     'diskon' => $request->diskon ?? 0,
                     'subtotal' => $subtotal,
                 ];
             }
 
-            $diskon = $request->diskon ?? 0; 
+            $diskon = $request->diskon ?? 0;
             $totalHargaDenganDiskon = $totalHarga * (1 - $diskon / 100);
             $kembalian = $request->bayar - $totalHargaDenganDiskon;
             $bayar = $request->bayar;
@@ -107,7 +107,7 @@ class PenjualanController extends Controller
                 PenjualanDetail::create([
                     'id_penjualan' => $penjualan->id_penjualan,
                     'id_produk' => $detail['id_produk'],
-                    'harga_jual' => $detail['harga_jual'], 
+                    'harga_jual' => $detail['harga_jual'],
                     'jumlah' => $detail['jumlah'],
                     'diskon' => $detail['diskon'],
                     'subtotal' => $detail['subtotal'],
@@ -115,6 +115,7 @@ class PenjualanController extends Controller
             }
 
             DB::commit();
+
 
             return redirect()->route('penjualan.struk', ['id' => $penjualan->id_penjualan]);
         } catch (\Exception $e) {

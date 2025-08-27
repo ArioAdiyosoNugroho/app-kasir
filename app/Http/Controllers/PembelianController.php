@@ -27,6 +27,9 @@ class PembelianController extends Controller
 
     public function store(Request $request)
     {
+        // logger($request->all()); // masuk ke laravel.log
+
+        // dd($request->all());
         $request->validate([
             'id_supplier' => 'required|exists:supplier,id_supplier',
             'produk.*.kode_produk' => 'required|exists:produk,kode_produk',
